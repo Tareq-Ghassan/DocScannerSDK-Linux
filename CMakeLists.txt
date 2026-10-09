@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(DocScannerSDK VERSION 1.0.0 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+add_library(docscanner SHARED src/doc_scanner.cpp)
+target_include_directories(docscanner PUBLIC include)
+add_executable(docscanner_example example/main.cpp)
+target_link_libraries(docscanner_example PRIVATE docscanner)
